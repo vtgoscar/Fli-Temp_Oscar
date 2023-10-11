@@ -19,7 +19,7 @@
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<a
-					class="btn btn-lg variant-ghost-surface"
+					class="btn btn-md variant-ghost-surface"
 					href="mailto:media@fligolf.com"
 					target="_blank"
 					rel="noreferrer"
@@ -27,7 +27,7 @@
 					Media Email
 				</a>
 				<a
-					class="btn btn-lg variant-ghost-surface"
+					class="btn btn-md variant-ghost-surface"
 					href="mailto:info@fligolf.com"
 					target="_blank"
 					rel="noreferrer"

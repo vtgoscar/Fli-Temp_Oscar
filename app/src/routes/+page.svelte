@@ -2,9 +2,7 @@
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
-		<!-- Animated Logo -->
-		<img src="/FLI_BLK.png" alt="FLI GOLF Logo" class="logo-class" />
-		<!-- / -->
+		<h1 class="text-5xl sm:text-7xl md:text-9xl font-bold mb-4 uppercase">Comming Soon!</h1>
 	</div>
 </div>
 
