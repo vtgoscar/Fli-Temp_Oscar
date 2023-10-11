@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import Footer from '$lib/components/Footer.svelte';
 
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
@@ -39,4 +40,5 @@
 	</svelte:fragment>
 	<!-- Page Route Content -->
 	<slot />
+	<Footer />
 </AppShell>
