@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { supabase } from '../supabaseClient';
+	import { supabase } from '/src/suprabaseClient.ts';
 	import { fly } from 'svelte/transition';
 	import authStore from '../lib/AuthStore';
 

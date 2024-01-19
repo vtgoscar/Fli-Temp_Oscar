@@ -8,7 +8,7 @@
 	import authStore from '$lib/AuthStore';
 	import { onMount } from 'svelte';
 	import type { AuthSession } from '@supabase/supabase-js';
-	import { supabase } from '../supabaseClient';
+	import { supabase } from '/src/suprabaseClient.ts';
 	import { page } from '$app/stores';
 	import AdminDashboard from '../lib/AdminDashboard.svelte';
 	import ParticipantDashboard from '../lib/ParticipantDashboard.svelte';
