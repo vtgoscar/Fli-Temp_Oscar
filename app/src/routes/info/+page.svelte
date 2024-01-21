@@ -19,7 +19,9 @@
 
 <div>
 	<img src="/GROUP.jpg" alt="Group Image" />
-	<div class="image-caption mb-6">Corey LaRusso, Dustin Dinsmore, Tony Smart, and Andrew Panza</div>
+	<div class="image-caption mb-6">
+		Andrew Panza, Dustin Dinsmore, Tony Smart, Mark Colemann and Corey LaRusso
+	</div>
 </div>
 
 <ul class="customBulletList">
@@ -62,7 +64,7 @@
 		transform: translateY(-50%);
 		width: 20px; /* Adjust based on the actual size of your image */
 		height: 20px; /* Adjust based on the actual size of your image */
-		background-image: url('/FLI_BUL.png');
+		background-image: url('/FLI_BULLET.png');
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
