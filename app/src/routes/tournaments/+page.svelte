@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import TournamentCard from '$lib/components/TournamentCard.svelte';
-	import { supabase } from '../../supabaseClient';
+	import { supabase } from '../../suprabaseClient.ts';
 
 	let selectedTab: 'upcoming' | 'completed' = 'upcoming';
 	let tournaments = [];
