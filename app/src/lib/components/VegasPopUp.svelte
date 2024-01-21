@@ -26,7 +26,7 @@
 		>
 			<!-- Close button -->
 			<button
-				class="absolute top-0 right-0 m-2 text-gray-700 hover:text-gray-900"
+				class="absolute top-0 right-0 mt-0 mr-2 text-gray-700 hover:text-gray-900"
 				type="button"
 				on:click={closeOverlay}
 			>
@@ -49,7 +49,7 @@
 			<!-- Content of your popup -->
 			<div class="text-black flex-grow">
 				<div class="mb-4">
-					<img src="/FLI_BLK.png" alt="FLI GOLF League Logo" />
+					<img src="/FLI_BLK_WT_SM.png" alt="FLI GOLF League Logo" />
 				</div>
 				<p class="mb-4">
 					Get ready for a Disc Golf revolution unlike anything you&#39;ve ever seen before! FLI GOLF

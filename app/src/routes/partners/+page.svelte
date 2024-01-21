@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import SponsorCard from '$lib/components/SponsorCard.svelte';
 	import VenueCard from '$lib/components/VenueCard.svelte';
-	import { supabase } from '../../supabaseClient';
+	import { supabase } from '../../suprabaseClient.ts';
 
 	let selectedTab: 'venues' | 'sponsors' = 'venues';
 	let sponsors = [];

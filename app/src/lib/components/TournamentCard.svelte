@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { supabase } from '../../supabaseClient';
+	import { supabase } from '../../suprabaseClient.ts';
 	import HoleDetails from '$lib/components/HoleDetails.svelte';
 	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
@@ -89,21 +89,25 @@
 		}
 	}
 
-async function showGroups(): Promise<void> {
-    isLoading = true;
-    console.log('Fetching groups for:', tournamentId);
+	async function showGroups(): Promise<void> {
+		isLoading = true;
+		console.log('Fetching groups for:', tournamentId);
 
-    try {
-        const { data: groups, error } = await supabase.rpc('fetchgroupsviapairingsandrefrencedtournament', {
-            tournament_id: tournamentId
-        });
+		try {
+			const { data: groups, error } = await supabase.rpc(
+				'fetchgroupsviapairingsandrefrencedtournament',
+				{
+					tournament_id: tournamentId
+				}
+			);
 
-        if (error) {  // changed from groupsError to error
-            console.error('Error fetching groups:', error.message);
-            throw error;  // changed from groupsError to error
-        }
+			if (error) {
+				// changed from groupsError to error
+				console.error('Error fetching groups:', error.message);
+				throw error; // changed from groupsError to error
+			}
 
-        console.log('Fetched groups:', groups);
+			console.log('Fetched groups:', groups);
 
 			const enrichedGroups = [];
 
@@ -137,9 +141,9 @@ async function showGroups(): Promise<void> {
 			groupData = enrichedGroups; // <-- Update the groupData array
 			isLoading = false; // Fetching completed
 		} catch (err) {
-        console.error('Unexpected error in showGroups:', err.message);
-    }
-}
+			console.error('Unexpected error in showGroups:', err.message);
+		}
+	}
 
 	async function fetchTeamsByRef(ref) {
 		try {

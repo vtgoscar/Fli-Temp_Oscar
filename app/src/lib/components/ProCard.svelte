@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getTeamColors } from '$lib/utilities/teamColors';
+	import { getTeamColors } from '$lib/utilities/teamColors.ts';
 
 	export let name: string;
 	export let gender: boolean = true;
