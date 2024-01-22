@@ -12,7 +12,7 @@
 		<!-- Emphasize the team name in blue and uppercase. When ready, wrap in <a> tag -->
 		<div class="text-xl font-bold mb-2">{name}</div>
 		<div class="text-gray-400">
-			<div>Location: ${location}</div>
+			<div>Location: {location}</div>
 		</div>
 	</div>
 </div>
