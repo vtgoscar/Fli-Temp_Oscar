@@ -62,7 +62,12 @@
 				throw error;
 			}
 
-			holesData = data || []; // Save the fetched data to a local variable
+			if (data) {
+				// Sort the holes data by hole_number in ascending order
+				data.sort((a, b) => a.hole_number - b.hole_number);
+			}
+
+			holesData = data || []; // Save the fetched and sorted data to a local variable
 		} catch (err) {
 			console.error('Error fetching holes:', err.message || err);
 		}
