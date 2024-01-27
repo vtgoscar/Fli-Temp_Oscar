@@ -10,9 +10,9 @@
 	import type { AuthSession } from '@supabase/supabase-js';
 	import { supabase } from '/src/suprabaseClient.ts';
 	import { page } from '$app/stores';
-	import AdminDashboard from '../lib/AdminDashboard.svelte';
-	import ParticipantDashboard from '../lib/ParticipantDashboard.svelte';
-	import SubscribertDashboard from '../lib/SubscriberDashboard.svelte';
+	import AdminDashboard from '$lib/AdminDashboard.svelte';
+	import ParticipantDashboard from '$lib/ParticipantDashboard.svelte';
+	import SubscribertDashboard from '$lib/SubscriberDashboard.svelte';
 	import { goto } from '$app/navigation';
 	import Icon from '@iconify/svelte';
 	import { tick } from 'svelte';
