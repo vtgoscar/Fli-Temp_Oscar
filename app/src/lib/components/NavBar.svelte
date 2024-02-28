@@ -28,21 +28,7 @@
 	>
 		<!-- Main Menu Links -->
 		<div class="space-x-2 sm:space-x-4 w-full sm:w-auto mb-4 sm:mb-0 md:flex">
-			<button
-				class="flex items-center bg-green-500 hover:bg-green-700 text-black font-extrabold py-1 px-2 rounded focus:outline-none focus:shadow-outline mb-2 w-full sm:w-auto"
-				on:click={() => navigateTo('pros')}
-			>
-				<Icon icon="mdi:order-bool-ascending" class="mr-2" />
-				<span>Standings</span>
-			</button>
 
-			<button
-				class="flex items-center bg-green-500 hover:bg-green-700 text-black font-extrabold py-1 px-2 rounded focus:outline-none focus:shadow-outline mb-2 w-full sm:w-auto"
-				on:click={() => navigateTo('partners')}
-			>
-				<Icon icon="mdi:partnership-outline" class="mr-2" />
-				<span>Partners</span>
-			</button>
 
 			<button
 				class="flex items-center bg-green-500 hover:bg-green-700 text-black font-extrabold py-1 px-2 rounded focus:outline-none focus:shadow-outline mb-2 w-full sm:w-auto"
@@ -53,8 +39,6 @@
 			</button>
 		</div>
 
-		{#if $overlayStore === 'vegas'}
-			<VegasPopUp on:close={closeVegasPopUp} />
-		{/if}
+
 	</div>
 </div>

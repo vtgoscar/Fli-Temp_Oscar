@@ -24,11 +24,61 @@
 	</div>
 </div>
 
-<ul class="customBulletList">
-	{#each listItems as item}
-		<li>{item}</li>
-	{/each}
-</ul>
+<div class="container mx-auto px-4 py-8">
+	<h1 class="text-3xl font-bold mb-4">Welcome to FLI Golf: Where Tradition Meets Collaboration</h1>
+	<p class="text-lg mb-6">
+		At FLI Golf, we're more than just a brand – we're a movement dedicated to revolutionizing the
+		world of disc golf while championing values of empowerment and equality. As a newcomer to the
+		scene, we're proud to represent the spirit of the sport and advocate for positive change.
+	</p>
+
+	<h2 class="text-2xl font-bold mb-2">Our Mission: Redefining Disc Golf with Purpose</h2>
+	<p class="text-lg mb-6">
+		At FLI Golf, our mission is simple yet profound: to redefine the disc golf experience while
+		fostering a culture of inclusivity, empowerment, and equality. Disc golf isn't just a game to us
+		– it's a platform for progress, a catalyst for change, and a community united by passion.
+	</p>
+
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+		<div class="bg-green-700 text-white p-4 rounded-lg">
+			<h3 class="text-xl font-bold mb-2">Empowering Women</h3>
+			<p class="text-lg">
+				We believe in the power of representation and diversity. That's why we're dedicated to
+				empowering women in disc golf, creating opportunities for growth, leadership, and
+				recognition within the sport.
+			</p>
+		</div>
+		<div class="bg-green-700 text-white p-4 rounded-lg">
+			<h3 class="text-xl font-bold mb-2">Gender Equality in Sports</h3>
+			<p class="text-lg">
+				Equality isn't just a goal – it's a fundamental value we uphold in everything we do. We're
+				committed to breaking down gender barriers and promoting equality in disc golf and beyond.
+			</p>
+		</div>
+		<div class="bg-green-700 text-white p-4 rounded-lg">
+			<h3 class="text-xl font-bold mb-2">Limited Edition Clothing Drops and Collaborations</h3>
+			<p class="text-lg">
+				FLI Golf isn't just about discs – it's a lifestyle. Stay ahead of the curve with our
+				exclusive clothing drops and collaborations with like-minded brands. From limited edition
+				apparel to exciting partnerships, we're always pushing the boundaries of style and
+				innovation.
+			</p>
+		</div>
+	</div>
+
+	<h2 class="text-2xl font-bold mt-8 mb-2">Join the FLI Golf Movement</h2>
+	<p class="text-lg mb-6">
+		Whether you're a seasoned veteran or a curious newcomer, FLI Golf welcomes you with open arms.
+		Together, we can push the boundaries, challenge the status quo, and make a positive impact on
+		the world of disc golf.
+	</p>
+
+	<p class="text-lg mb-6">
+		Ready to join the FLI Golf movement? Explore our products, connect with our community, and
+		experience the difference of disc golf with FLI Golf by your side. Together, let's fly higher,
+		play better, and change the game for good.
+	</p>
+</div>
 
 <div class="p-6 text-white">
 	<p class="text-xl font-semibold mb-4">
