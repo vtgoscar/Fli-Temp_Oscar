@@ -46,25 +46,10 @@
 
 			<button
 				class="flex items-center bg-green-500 hover:bg-green-700 text-black font-extrabold py-1 px-2 rounded focus:outline-none focus:shadow-outline mb-2 w-full sm:w-auto"
-				on:click={() => navigateTo('tournaments')}
-			>
-				<Icon icon="pixelarticons:tournament" class="mr-2" />
-				<span>Tournaments</span>
-			</button>
-
-			<button
-				class="flex items-center bg-green-500 hover:bg-green-700 text-black font-extrabold py-1 px-2 rounded focus:outline-none focus:shadow-outline mb-2 w-full sm:w-auto"
 				on:click={() => navigateTo('info')}
 			>
 				<Icon icon="carbon:information" class="mr-2" />
 				<span>Information</span>
-			</button>
-			<button
-				class="flex items-center bg-green-500 hover:bg-green-700 text-black font-extrabold py-1 px-2 rounded focus:outline-none focus:shadow-outline mb-2 w-full sm:w-auto"
-				on:click={toggleVegasPopUp}
-			>
-				<Icon icon="fa-brands:fantasy-flight-games" class="mr-2" />
-				Fantasy
 			</button>
 		</div>
 
