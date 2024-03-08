@@ -82,7 +82,7 @@
 
 <div class="p-6 text-white">
 	<p class="text-xl font-semibold mb-4">
-		Located at the intersection of sports and entertainment, the FLI GOLF TOUR - Pairs Edition is
+		Located at the intersection of sports and entertainment, the FLI GOLF TOUR - is
 		all set to mark a new chapter in the world of disc golf.
 	</p>
 	<div class="border-t pt-4 mt-4">
