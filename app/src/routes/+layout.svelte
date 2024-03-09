@@ -291,78 +291,40 @@
 
 <AppShell>
 	<svelte:fragment slot="header">
-		<AppBar>
-			<svelte:fragment slot="lead">
-				<a href="/">
-					<img src="/FLI_BLK.png" alt="FLI GOLF Logo" class="logo-class" />
-				</a>
-			</svelte:fragment>
+		<AppBar class="ml-36">
+			<div class="flex items-center justify-between">
+				<div class="flex items-center">
+					<!-- Container for the logo and text -->
+					<a href="/" class="mr-8">
+						<!-- Use mr-8 to add space between the logo and menu items -->
+						<img src="/FLI_BLK.png" alt="FLI GOLF Logo" class="logo-class w-1/2" />
+						<!-- Logo -->
+					</a>
+					<div class="text-white font-bold flex items-center whitespace-nowrap text-3xl">
+						Shop <span class="mx-2">|</span>
+					</div>
+				</div>
+				<!-- Apply ml-auto class to move the container with the logo and menu items to the right -->
+				<div class="ml-auto">
+					<!-- Adjusted margin-left value -->
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="52"
+						height="52"
+						viewBox="0 0 24 24"
+						fill="currentColor"
+					>
+						<path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z" />
+					</svg>
+				</div>
+			</div>
 		</AppBar>
-		<!-- Place the NavBar logic directly here, outside of a fragment -->
-		{#if isHomePage}
-			<!-- Full NavBar for Home Page -->
-			<NavBar />
-			{#if !session}
-				<!-- Your existing code for larger screens -->
-			{/if}
-		{:else if isSmallScreen}
-			<!-- Mini Menu (Icon) for small screens not on Home Page -->
-			<button class="icon-button" on:click={toggleNavBar}>
-				<div class="ml-8"><Icon icon="mdi:menu" /></div>
-			</button>
-			{#if showNavBar}
-				<NavBar />
-			{/if}
-		{:else}
-			<!-- Full NavBar for large screens not on Home Page -->
-			<NavBar />
-			{#if !session}
-				<!-- Your existing code for larger screens -->
-			{/if}
-		{/if}
 	</svelte:fragment>
-
-	<div class="mt-2 mr-16 ml-16">
-		{#if !session}
-			<!-- User is not logged in -->
-			<div class="flex justify-center items-center py-3">
-				<button class="btn btn-lg variant-ghost-surface p-2 flex-1 mr-1" on:click={toggleRegister}>
-					Register
-				</button>
-				<button class="btn btn-lg variant-ghost-surface p-2 flex-1 ml-1" on:click={setFormToLogin}>
-					Sign In
-				</button>
-			</div>
-		{:else}
-			<!-- User is logged in -->
-			<button class="btn btn-lg variant-ghost-surface p-2 flex-1 ml-1" on:click={signOut}>
-				Sign Out
-			</button>
-			<button
-				class="btn btn-lg variant-ghost-surface p-2 flex-1 mr-1"
-				on:click={handlePasswordResetRequest}
-			>
-				Reset Password
-			</button>
-			<button
-				class="btn btn-lg variant-ghost-surface p-2 flex-1 ml-1"
-				on:click={toggleSubscribePopUp}
-			>
-				Subscribe
-			</button>
-		{/if}
-		{#if showUpdatePasswordForm}
-			<div in:fly={{ x: 300, duration: 300 }} out:fly={{ x: 300, duration: 300 }}>
-				<UpdatePasswordForm on:updatepassword={handleUpdatePasswordEvent} />
-			</div>
-		{:else if $overlayStore.visible}
-			<div class="overlay">
-				<SubscribePopUp />
-			</div>
-		{/if}
-
-		<slot />
+	<!-- Place the NavBar outside the AppBar -->
+	<div class="flex justify-center">
+		<NavBar />
 	</div>
+	<slot />
 	<Footer />
 </AppShell>
 
@@ -378,4 +340,20 @@
 		z-index: 1000; /* or any sufficiently high value */
 		position: relative; /* or absolute, depending on your needs */
 	}
+	@media (max-width: 768px) {
+		/* Adjust the layout for small screens */
+		.flex {
+			flex-direction: column;
+		}
+		.flex > div {
+			margin-bottom: 10px; /* Add spacing between buttons */
+		}
+	}
+	    .fixed-nav-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000; /* Adjust z-index as needed */
+    }
 </style>

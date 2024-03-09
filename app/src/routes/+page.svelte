@@ -4,6 +4,7 @@
 	import type { AuthSession } from '@supabase/supabase-js';
 	import Account from '$lib/Account.svelte';
 	import Auth from '$lib/Auth.svelte';
+	import HeroCard from '$lib/components/HeroCard.svelte';
 
 	let session: AuthSession;
 	
@@ -19,15 +20,16 @@
 	});
 </script>
 
-<div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-10 text-center flex flex-col items-center">
-		<!-- Login -->
-		<div class="container" style="padding: 50px 0 100px 0">
-			{#if !session}
-				<Auth />
-			{:else}
-				<Account {session} />
-			{/if}
-		</div>
-	</div>
+<div class="container h-full mx-auto relative">
+    <HeroCard class="absolute top-0 left-0 right-0 z-10 mt-16" />
+    <div class="space-y-10 text-center flex flex-col items-center relative z-0">
+        <!-- Login -->
+        <div class="container" style="padding: 50px 0 100px 0">
+            {#if !session}
+                <Auth />
+            {:else}
+                <Account {session} />
+            {/if}
+        </div>
+    </div>
 </div>
