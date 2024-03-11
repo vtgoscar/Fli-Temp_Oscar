@@ -1,5 +1,5 @@
 <script>
-    import aboutImage from '../assets/images/about.jpg';
+    import aboutImage from '../assets/images/group-fli-1.jpg';
     import Counter from './counter.svelte';
 </script>
 <Counter />
@@ -10,15 +10,6 @@
                 <div class="lg:me-8">
                     <div class="relative">
                         <img src={aboutImage} class="rounded-full shadow dark:shadow-gray-700" alt=""/>
-
-                        <div class="absolute top-1/2 -translate-y-1/2 start-0 end-0 mx-auto size-56 flex justify-center items-center bg-white dark:bg-slate-900 rounded-full shadow dark:shadow-gray-700">
-                            <div class="text-center">
-                                <span class="text-teal-500 text-2xl font-semibold mb-0 block">
-                                    <span class="counter-value text-6xl font-semibold" data-target="15">3</span>+
-                                </span>
-                                <span class="font-semibold block mt-2">Years <br/> Experience</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 <script>
-	import heroImg from "../assets/images/design-team.svg"
+	import heroImg from "../assets/images/aperl_tp_3.png"
 	import Header from "../components/navbar.svelte";
 	import About from "../components/about.svelte";
 	import Services from '../components/services.svelte';
@@ -17,8 +17,8 @@
 	<div class="container relative mt-8">
 		<div class="grid md:grid-cols-2 grid-cols-1 gap-6 items-center">
 			<div>
-				<h1 class="font-semibold lg:leading-normal leading-normal tracking-wide text-4xl lg:text-5xl mb-5">Get Creative & Modern With Upcover</h1>
-				<p class="text-slate-400 text-lg max-w-xl">This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+				<h1 class="font-semibold lg:leading-normal leading-normal tracking-wide text-4xl lg:text-5xl mb-5">Sign up today and unlock a world of possibilities</h1>
+				<p class="text-slate-500 text-lg max-w-xl">Ready to take your experience to the next level? Sign up now to access exclusive content, personalized recommendations, and member-only perks!</p>
 				
 				<div class="mt-6">
 					<a href="/" class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500 text-white">Contact Us <i class="mdi mdi-chevron-right ms-1"></i></a>

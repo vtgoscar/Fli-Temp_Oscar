@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
-    import logoDark from '../assets/images/logo-dark.png';
-    import logoLight from '../assets/images/logo-light.png';
+    import logoDark from '../assets/images/logo-blk-wt.png';
+    import logoLight from '../assets/images/logo-wt-blk.png';
     let menu = false;
     let loading = false;
 onMount(() => {
