@@ -1,83 +1,64 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
-	import { supabase } from '/src/suprabaseClient.ts';
-	import type { AuthSession } from '@supabase/supabase-js';
-	import Account from '$lib/Account.svelte';
-	import Auth from '$lib/Auth.svelte';
-	import HeroCard from '$lib/components/HeroCard.svelte';
-
-	let session: AuthSession;
-
-	onMount(() => {
-		supabase.auth.getSession().then(({ data }) => {
-			session = data.session;
-		});
-
-		supabase.auth.onAuthStateChange((_event, _session) => {
-			session = _session;
-		});
-	});
+<script>
+	import heroImg from '../assets/images/design-team.svg';
+	import Header from '../components/navbar.svelte';
+	import About from '../components/about.svelte';
+	import Services from '../components/services.svelte';
+	import AgencyTab from '../components/agencyTab.svelte';
+	import Cta from '../components/cta.svelte';
+	import Client from '../components/client.svelte';
+	import Pricing from '../components/pricing.svelte';
+	import Blogs from '../components/blog.svelte';
+	import GetInTouch from '../components/getInTuoch.svelte';
+	import Footer from '../components/footer.svelte';
+	import Switcher from '../components/switcher.svelte';
 </script>
 
-<div class="container mx-auto px-4">
-	<!-- HeroCards -->
-	<div class="flex justify-between">
-		<!-- Existing card -->
-		<div class="mt-8">
-			<div class="card flex-1 h-144 bg-base-100 shadow-xl overflow-auto mr-4 ring-slate-200">
-				<div class="card-body">
-					<h2
-						class="mt-6 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white ml-4"
-					>
-						<div class="badge-large badge badge-secondary blinking">Sign Up NOW</div>
-					</h2>
-					<a href="#">
-						<h5 class="mb-2 text-4xl font-bold text-gray-900 dark:text-white ml-4">
-							Be among the exclusive few to get your hands on our first-ever limited edition
-							clothing line! Designed with passion and crafted with precision, these pieces are the
-							epitome of style and exclusivity.
-						</h5>
-					</a>
+<Header />
+<section
+	class="relative overflow-hidden md:py-48 py-40 bg-teal-500/5 dark:bg-teal-500/20"
+	id="home"
+>
+	<div class="container relative mt-8">
+		<div class="grid md:grid-cols-2 grid-cols-1 gap-6 items-center">
+			<div>
+				<h1
+					class="font-semibold lg:leading-normal leading-normal tracking-wide text-4xl lg:text-5xl mb-5"
+				>
+					Get Creative & Modern With Upcover
+				</h1>
+				<p class="text-slate-400 text-lg max-w-xl">
+					This is just a simple text made for this unique and awesome template, you can replace it
+					with any text.
+				</p>
+
+				<div class="mt-6">
 					<a
-						href="#"
-						class="mb-8 ml-6 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+						href="/"
+						class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500 text-white"
+						>Contact Us <i class="mdi mdi-chevron-right ms-1" /></a
 					>
-						Sign up
-						<svg
-							class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-							aria-hidden="true"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 14 10"
-						>
-							<path
-								stroke="currentColor"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M1 5h12m0 0L9 1m4 4L9 9"
-							/>
-						</svg>
-					</a>
 				</div>
 			</div>
-		</div>
 
-		<!-- New card -->
-		<div class="mt-8">
-			<div class="card w-64 h-144 bg-green-500 rounded-lg shadow-xl overflow-auto ring-slate-200">
-				<div class="card-body flex flex-col justify-center items-center text-white">
-					<h2 class="mt-8 mb-6 badge-large badge badge-secondary blinking">Subscribe Now</h2>
-					<p class="text-center mb-2 text-4xl font-bold text-gray-900 dark:text-white ml-4">
-						Get ready for exclusive offers on our first limited edition clothing drop!
-					</p>
-					<button
-						class="btn btn-lg bg-green-700 text-white px-6 py-3 mt-4 hover:bg-green-800 hover:text-white rounded-full mb-8"
-					>
-						Subscribe
-					</button>
+			<div class="lg:ms-8">
+				<div class="relative">
+					<img src={heroImg} class="relative top-16" alt="" />
+					<div
+						class="overflow-hidden absolute md:size-[500px] size-[400px] bg-gradient-to-tl to-teal-500/20 via-teal-500/70 from-teal-500 bottom-1/2 translate-y-1/2 md:start-0 start-1/2 ltr:md:translate-x-0 ltr:-translate-x-1/2 rtl:md:translate-x-0 rtl:translate-x-1/2 -z-1 shadow-md shadow-teal-500/10 rounded-full"
+					/>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</section>
+
+<About />
+<Services />
+<AgencyTab />
+<Cta />
+<Client />
+<Pricing />
+<Blogs />
+<GetInTouch />
+<Footer />
+<Switcher />
