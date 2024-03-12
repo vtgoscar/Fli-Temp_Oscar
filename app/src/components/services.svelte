@@ -3,22 +3,22 @@
     const servicesData = [  
         {
             icon:TrendingUpIcon,
-            title:'Grow Your Business',
+            title:'Empowering Women',
             desc:'If the distribution of letters and words is random, the reader will not be distracted from making.'
         },
         {
             icon:DollarSignIcon,
-            title:'Drive More Sales',
+            title:'Gender Equality in Sports',
             desc:'If the distribution of letters and words is random, the reader will not be distracted from making.'
         },
         {
             icon:CompassIcon,
-            title:'Handled By Expert',
+            title:'Limited Edition Clothing Drops',
             desc:'If the distribution of letters and words is random, the reader will not be distracted from making.'
         },
         {
             icon:CommandIcon,
-            title:'Discussion For Idea',
+            title:'Collaborations',
             desc:'If the distribution of letters and words is random, the reader will not be distracted from making.'
         },
         {
@@ -47,9 +47,9 @@
 <section class="relative md:py-24 py-16 bg-slate-50 dark:bg-slate-800" id="services">
     <div class="container relative">
         <div class="grid grid-cols-1 pb-6 text-center">
-            <h3 class="font-semibold text-2xl leading-normal mb-4">Our Services</h3>
+            <h3 class="font-semibold text-2xl leading-normal mb-4">Key Points</h3>
 
-            <p class="text-slate-400 max-w-xl mx-auto">This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+            <p class="text-slate-400 max-w-xl mx-auto">Equality isn't just a goal – it's a fundamental value we uphold in everything we do. We're committed to breaking down gender barriers and promoting equality in disc golf and beyond.</p>
         </div>
 
         <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 gap-6 mt-6">
