@@ -78,13 +78,13 @@ function handleAnchorClick (event) {
                             <a class="nav-link about" href="#about" on:click={handleAnchorClick} smooth={true} duration={1000} activeClass='active' spy={true}>About</a>
                         </li>
                         <li class="nav-item ms-0">
-                            <a class="nav-link services" href="#services" on:click={handleAnchorClick} smooth={true} duration={1000} activeClass='active' spy={true}>Key Points</a>
+                            <a class="nav-link services" href="#services" on:click={handleAnchorClick} smooth={true} duration={1000} activeClass='active' spy={true}>Info</a>
                         </li>
                         <li class="nav-item ms-0">
                             <a class="nav-link review" href="#review" on:click={handleAnchorClick} smooth={true} duration={1000} activeClass='active' spy={true}>Testimonial</a>
                         </li>
                         <li class="nav-item ms-0">
-                            <a class="nav-link pricing" href="#pricing" on:click={handleAnchorClick} smooth={true} duration={1000} activeClass='active' spy={true}>Pricing</a>
+                            <a class="nav-link pricing" href="#pricing" on:click={handleAnchorClick} smooth={true} duration={1000} activeClass='active' spy={true}>Subscribe</a>
                         </li>
                         <li class="nav-item ms-0">
                             <a class="nav-link blog" href="#blog" on:click={handleAnchorClick} smooth={true} duration={1000} activeClass='active' spy={true}>Blogs</a>

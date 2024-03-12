@@ -22,7 +22,7 @@
             </div>
 
             <div class="group p-6 relative overflow-hidden shadow dark:shadow-gray-700 bg-white dark:bg-slate-900 rounded-md h-fit">
-                <h6 class="font-semibold mb-5 text-xl">Single</h6>
+                <h6 class="font-semibold mb-5 text-xl">Monthly Subscription</h6>
 
                 <div class="flex mb-5">
                     <span class="text-lg font-medium">$</span>
@@ -31,8 +31,8 @@
                 </div>
 
                 <ul class="list-none text-slate-400">
-                    <li class="mb-1 flex"><i class="mdi mdi-check-circle-outline text-teal-500 text-[20px] align-middle me-2"></i> <span>We offers a free 7 days of service for new customers.</span></li>
-                    <li class="mb-1 flex"><i class="mdi mdi-check-circle-outline text-teal-500 text-[20px] align-middle me-2"></i> <span>Our Talented & Experienced Marketing Agency</span></li>
+                    <li class="mb-1 flex"><i class="mdi mdi-check-circle-outline text-teal-500 text-[20px] align-middle me-2"></i> <span>Offers coming soon</span></li>
+                    <li class="mb-1 flex"><i class="mdi mdi-check-circle-outline text-teal-500 text-[20px] align-middle me-2"></i> <span>Advanced</span></li>
                 </ul>
                 <a href="/" class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500/5 hover:bg-teal-500 text-teal-500 hover:text-white w-full mt-5">Subscribe Now</a>
             </div>

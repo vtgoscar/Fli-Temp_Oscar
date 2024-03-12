@@ -47,7 +47,7 @@
 <section class="relative md:py-24 py-16 bg-slate-50 dark:bg-slate-800" id="services">
     <div class="container relative">
         <div class="grid grid-cols-1 pb-6 text-center">
-            <h3 class="font-semibold text-2xl leading-normal mb-4">Key Points</h3>
+            <h3 class="font-semibold text-2xl leading-normal mb-4">Info</h3>
 
             <p class="text-slate-400 max-w-xl mx-auto">Equality isn't just a goal – it's a fundamental value we uphold in everything we do. We're committed to breaking down gender barriers and promoting equality in disc golf and beyond.</p>
         </div>
