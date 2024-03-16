@@ -38,7 +38,7 @@
 <About/>
 <Services/>
 <AgencyTab/>
- <Cta/>
+<Cta/>
 <Client/>
 <Pricing/>
 <Blogs/>
