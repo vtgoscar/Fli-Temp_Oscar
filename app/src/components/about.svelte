@@ -17,10 +17,9 @@
 
             <div class="md:col-span-6">
                 <div class="lg:ms-8">
-                    <h6 class="text-teal-500 text-sm font-semibold uppercase mb-2">Welcome to FLI Golf:</h6>
-                    <h3 class="font-semibold text-2xl leading-normal mb-4">Our Mission: <br/> Redefine disc golf with purpose</h3>
+                    <h3 class="font-semibold text-2xl leading-normal mb-4">Our Mission: <br/> Redefine disc golf</h3>
 
-                    <p class="text-slate-500 max-w-xl mb-6">It is simple yet profound: to redefine the disc golf experience while fostering a culture of inclusivity, empowerment, and equality. Disc golf isn't just a game to us – it's a platform for progress, a catalyst for change, and a community united by passion.</p>
+                    <p class="text-slate-500 max-w-xl mb-6">Our mission is clear and resolute: to redefine the disc golf experience while championing inclusivity, empowerment, and equality. Beyond merely a game, disc golf serves as our platform for progress, a catalyst for change, and a vibrant community united by passion.</p>
 
                     <a href="/" class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500 text-white">Read More <i class="mdi mdi-chevron-right align-middle ms-0.5"></i></a>
                 </div>

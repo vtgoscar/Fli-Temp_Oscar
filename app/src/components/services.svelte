@@ -1,40 +1,40 @@
 <script>
-    import { TrendingUpIcon,DollarSignIcon,CompassIcon,CommandIcon,InboxIcon,CameraIcon,BellIcon,MonitorIcon } from 'svelte-feather-icons';
+    import { TrendingUpIcon,PauseIcon,CompassIcon,CommandIcon,HexagonIcon,MaximizeIcon,BellIcon,MonitorIcon } from 'svelte-feather-icons';
     const servicesData = [  
         {
             icon:TrendingUpIcon,
             title:'Empowering Women',
-            desc:'If the distribution of letters and words is random, the reader will not be distracted from making.'
+            desc:'Ensuring equal pay for women empowers them by recognizing their invaluable contributions and talents on par with men, fostering a more equitable society where individuals are valued based on merit rather than gender.'
         },
         {
-            icon:DollarSignIcon,
+            icon:PauseIcon,
             title:'Gender Equality in Sports',
-            desc:'If the distribution of letters and words is random, the reader will not be distracted from making.'
+            desc:'Gender equality in sports is achieved when athletes of all genders have equal opportunities for participation, access to resources, recognition, and support, creating a level playing field where talent and dedication determine success rather than gender.'
         },
         {
             icon:CompassIcon,
             title:'Limited Edition Clothing Drops',
-            desc:'If the distribution of letters and words is random, the reader will not be distracted from making.'
+            desc:'Limited edition clothing drops offer a unique opportunity for fashion enthusiasts to own exclusive pieces that reflect their individuality and style, fostering a sense of exclusivity and excitement within the fashion community.'
         },
         {
             icon:CommandIcon,
             title:'Collaborations',
-            desc:'If the distribution of letters and words is random, the reader will not be distracted from making.'
+            desc: 'In our collaborative efforts, we partner with like-minded organizations and individuals to drive positive change and innovation in disc golf. Through shared visions and combined expertise, we aim to create impactful projects, events, and initiatives that benefit the entire disc golf community.'
         },
         {
-            icon:InboxIcon,
-            title:'Web Design',
-            desc:'If the distribution of letters and words is random, the reader will not be distracted from making.'
+            icon:HexagonIcon,
+            title:'Competition',
+            desc:'Simply put, FLI Golf tournaments will be unmatched with anything happening in the sport of disc golf today.'
         },
         {
-            icon:CameraIcon,
-            title:'Network Security',
-            desc:'If the distribution of letters and words is random, the reader will not be distracted from making.'
+            icon:MaximizeIcon,
+            title:'About',
+            desc:'The management team of FLI Golf has years of experience in the sports, entertainment, and business management industries, which has allowed FLI Golf to secure a major production partner, ensuring live play media coverage'
         },
         {
-            icon:BellIcon,
-            title:'Social Media',
-            desc:'If the distribution of letters and words is random, the reader will not be distracted from making.'
+            icon: BellIcon,
+            title: 'Social Media',
+            desc: "In disc golf social media, we amplify community voices, foster connections, and promote the sport's spirit. Join us in shaping an inclusive space for enthusiasts to share, celebrate, and evolve disc golf culture."
         },
         {
             icon:MonitorIcon,
