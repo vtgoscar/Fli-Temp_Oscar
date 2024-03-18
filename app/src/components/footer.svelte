@@ -1,5 +1,5 @@
 <script>
-    import logoLight from '../assets/images/logo-light.png'
+    import logoLight from '../assets/images/logo-wt-blk.png'
     import {ShoppingCartIcon , DribbbleIcon , LinkedinIcon , FacebookIcon , InstagramIcon , TwitterIcon , MailIcon } from 'svelte-feather-icons'
 
 </script>
@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="lg:col-span-5 text-center mt-6 md:mt-0">
-                    <p class="mb-0">© {new Date().getFullYear()} Upcover. Design & Develop with <i class="mdi mdi-heart text-red-600"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
+                    <p class="mb-0">© {new Date().getFullYear()} FLI Golf - Where Disc Golf Takes Flight <i class="mdi mdi-heart text-red-600"></i></p>
                 </div>
 
                 <ul class="lg:col-span-4 list-none md:text-end text-center mt-6 md:mt-0">
@@ -24,7 +24,7 @@
                     <li class="inline"><a href="https://www.facebook.com/shreethemes" target="_blank" class="size-8 inline-flex justify-center items-center border border-gray-800 rounded-md hover:border-teal-500 dark:hover:border-teal-500 hover:bg-teal-500 dark:hover:bg-teal-500"><FacebookIcon class="size-4 align-middle" title="instagram"/></a></li>
                     <li class="inline"><a href="https://www.instagram.com/shreethemes/" target="_blank" class="size-8 inline-flex justify-center items-center border border-gray-800 rounded-md hover:border-teal-500 dark:hover:border-teal-500 hover:bg-teal-500 dark:hover:bg-teal-500"><InstagramIcon class="size-4 align-middle" title="instagram"/></a></li>
                     <li class="inline"><a href="https://twitter.com/shreethemes" target="_blank" class="size-8 inline-flex justify-center items-center border border-gray-800 rounded-md hover:border-teal-500 dark:hover:border-teal-500 hover:bg-teal-500 dark:hover:bg-teal-500"><TwitterIcon class="size-4 align-middle" title="twitter"/></a></li>
-                    <li class="inline"><a href="mailto:support@shreethemes.in" class="size-8 inline-flex justify-center items-center border border-gray-800 rounded-md hover:border-teal-500 dark:hover:border-teal-500 hover:bg-teal-500 dark:hover:bg-teal-500"><MailIcon class="size-4 align-middle" title="email"/></a></li>
+                    <li class="inline"><a href="mailto:info@fligolf.com" class="size-8 inline-flex justify-center items-center border border-gray-800 rounded-md hover:border-teal-500 dark:hover:border-teal-500 hover:bg-teal-500 dark:hover:bg-teal-500"><MailIcon class="size-4 align-middle" title="email"/></a></li>
                 </ul>
             </div>
         </div>
