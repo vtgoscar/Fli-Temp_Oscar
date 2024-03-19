@@ -95,7 +95,7 @@
             <a href="#" on:click|preventDefault={() => openModal(item)} class="title text-lg font-semibold hover:text-teal-500">{item.title}</a>
             <p class="text-slate-400 mt-3">{item.desc}</p>
             <div class="mt-6">
-              <a href={item.link} class="text-teal-500">Read More <i class="mdi mdi-chevron-right align-middle"></i></a>
+               <a href="#" on:click|preventDefault={() => openModal(item)} class="text-teal-500">Read More <i class="mdi mdi-chevron-right align-middle"></i></a>
             </div>
           </div>
           <div class="absolute bottom-0 -end-16">
