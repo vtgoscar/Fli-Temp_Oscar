@@ -117,7 +117,7 @@ const servicesData = [
   {#if showModal}
     <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div class="bg-white p-6 rounded-lg shadow-lg max-w-md">
-        <h2 class="text-xl font-semibold mb-4">{activeService.title}</h2>
+        <h2 class="text-gray-700 text-xl font-semibold mb-4">{activeService.title}</h2>
         <p class="text-gray-700">{activeService.desc}</p><br>
         <p class="text-gray-700">{activeService.body}</p>
         <button class="mt-4 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600" on:click={closeModal}>Close</button>
