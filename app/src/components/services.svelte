@@ -10,56 +10,64 @@
     MonitorIcon
   } from 'svelte-feather-icons';
 
-  const servicesData = [
-    {
-      icon: TrendingUpIcon,
-      title: 'Empowering Women',
-      desc: 'Ensuring equal pay for women empowers them by recognizing their invaluable contributions and talents on par with men, fostering a more equitable society where individuals are valued based on merit rather than gender.',
-      link: 'empowering'
-    },
-    {
-      icon: PauseIcon,
-      title: 'Gender Equality in Sports',
-      desc: 'Gender equality in sports is achieved when athletes of all genders have equal opportunities for participation, access to resources, recognition, and support, creating a level playing field where talent and dedication determine success rather than gender.',
-      link: 'gender-equality-sports'
-    },
-    {
-      icon: CompassIcon,
-      title: 'Limited Edition Clothing Drops',
-      desc: 'Limited edition clothing drops offer a unique opportunity for fashion enthusiasts to own exclusive pieces that reflect their individuality and style, fostering a sense of exclusivity and excitement within the fashion community.',
-      link: 'limited-edition-clothing-drops'
-    },
-    {
-      icon: CommandIcon,
-      title: 'Collaborations',
-      desc: 'In our collaborative efforts, we partner with like-minded organizations and individuals to drive positive change and innovation in disc golf. Through shared visions and combined expertise, we aim to create impactful projects, events, and initiatives that benefit the entire disc golf community.',
-      link: 'collaborations'
-    },
-    {
-      icon: HexagonIcon,
-      title: 'Competition',
-      desc: 'Simply put, FLI Golf tournaments will be unmatched with anything happening in the sport of disc golf today.',
-      link: 'competition'
-    },
-    {
-      icon: MaximizeIcon,
-      title: 'About',
-      desc: 'The management team of FLI Golf has years of experience in the sports, entertainment, and business management industries, which has allowed FLI Golf to secure a major production partner, ensuring live play media coverage',
-      link: 'about'
-    },
-    {
-      icon: BellIcon,
-      title: 'Social Media',
-      desc: "In disc golf social media, we amplify community voices, foster connections, and promote the sport's spirit. Join us in shaping an inclusive space for enthusiasts to share, celebrate, and evolve disc golf culture.",
-      link: 'social-media'
-    },
-    {
-      icon: MonitorIcon,
-      title: 'Design & Branding',
-      desc: 'If the distribution of letters and words is random, the reader will not be distracted from making.',
-      link: 'design-branding'
-    }
-  ];
+const servicesData = [
+  {
+    icon: TrendingUpIcon,
+    title: 'Empowering Women',
+    desc: 'Ensuring equal pay for women empowers them by recognizing their invaluable contributions and talents on par with men, fostering a more equitable society where individuals are valued based on merit rather than gender.',
+    body: 'Empowering women in all aspects of life leads to a more inclusive society. By providing equal opportunities, we foster innovation and creativity, benefiting everyone in the community.',
+    link: 'empowering'
+  },
+  {
+    icon: PauseIcon,
+    title: 'Gender Equality in Sports',
+    desc: 'Gender equality in sports is achieved when athletes of all genders have equal opportunities for participation, access to resources, recognition, and support, creating a level playing field where talent and dedication determine success rather than gender.',
+    body: 'Promoting gender equality in sports is not just about fairness; it is about creating a healthier society. When everyone has the chance to compete and excel, we redefine traditional notions of athleticism and inspire future generations.',
+    link: 'gender-equality-sports'
+  },
+  {
+    icon: CompassIcon,
+    title: 'Limited Edition Clothing Drops',
+    desc: 'Limited edition clothing drops offer a unique opportunity for fashion enthusiasts to own exclusive pieces that reflect their individuality and style, fostering a sense of exclusivity and excitement within the fashion community.',
+    body: 'Limited edition clothing drops are more than just fashion; they are a form of self-expression. By offering exclusive designs, we celebrate diversity and creativity, allowing individuals to showcase their unique tastes.',
+    link: 'limited-edition-clothing-drops'
+  },
+  {
+    icon: CommandIcon,
+    title: 'Collaborations',
+    desc: 'In our collaborative efforts, we partner with like-minded organizations and individuals to drive positive change and innovation in disc golf. Through shared visions and combined expertise, we aim to create impactful projects, events, and initiatives that benefit the entire disc golf community.',
+    body: 'Collaboration is key to success in any endeavor. By working together, we pool resources, share knowledge, and achieve greater results than we could alone. Our partnerships drive innovation and inspire positive change.',
+    link: 'collaborations'
+  },
+  {
+    icon: HexagonIcon,
+    title: 'Competition',
+    desc: 'Simply put, FLI Golf tournaments will be unmatched with anything happening in the sport of disc golf today.',
+    body: 'Competition fuels progress and pushes boundaries. Our tournaments provide a platform for players to showcase their skills, pushing the sport of disc golf to new heights.',
+    link: 'competition'
+  },
+  {
+    icon: MaximizeIcon,
+    title: 'About',
+    desc: 'The management team of FLI Golf has years of experience in the sports, entertainment, and business management industries, which has allowed FLI Golf to secure a major production partner, ensuring live play media coverage',
+    body: 'Our team is passionate about revolutionizing the world of disc golf. With expertise in sports, entertainment, and business management, we are dedicated to providing top-notch experiences for players and fans alike.',
+    link: 'about'
+  },
+  {
+    icon: BellIcon,
+    title: 'Social Media',
+    desc: "In disc golf social media, we amplify community voices, foster connections, and promote the sport's spirit. Join us in shaping an inclusive space for enthusiasts to share, celebrate, and evolve disc golf culture.",
+    body: "Social media has become a powerful tool for connecting disc golf enthusiasts worldwide. Through our platforms, we amplify diverse voices, share stories, and foster a sense of community that transcends geographical boundaries.",
+    link: 'social-media'
+  },
+  {
+    icon: MonitorIcon,
+    title: 'Design & Branding',
+    desc: 'If the distribution of letters and words is random, the reader will not be distracted from making.',
+    body: "Design and branding play a crucial role in shaping the identity of FLI Golf. Our commitment to excellence extends beyond the course, encompassing every aspect of our brand experience.",
+    link: 'design-branding'
+  }
+];
 
   let showModal = false;
   let activeService = {};
@@ -110,7 +118,8 @@
     <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div class="bg-white p-6 rounded-lg shadow-lg max-w-md">
         <h2 class="text-xl font-semibold mb-4">{activeService.title}</h2>
-        <p class="text-gray-700">{activeService.desc}</p>
+        <p class="text-gray-700">{activeService.desc}</p><br>
+        <p class="text-gray-700">{activeService.body}</p>
         <button class="mt-4 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600" on:click={closeModal}>Close</button>
       </div>
     </div>
