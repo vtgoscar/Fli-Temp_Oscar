@@ -25,6 +25,7 @@
 	"type": "module",
 	"dependencies": {
 		"@splidejs/svelte-splide": "^0.2.9",
+		"@supabase/supabase-js": "^2.39.8",
 		"autoprefixer": "^10.4.17",
 		"node-sass": "^9.0.0",
 		"postcss-cli": "^11.0.0",
