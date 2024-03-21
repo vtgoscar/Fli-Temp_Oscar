@@ -1,4 +1,3 @@
-<!-- Auth.svelte -->
 <script lang="ts">
   import { supabase } from '../supabaseClient';
   import { fly } from 'svelte/transition';
@@ -12,6 +11,12 @@
   authStore.subscribe((state) => {
     formType = state.formType;
   });
+
+  const handleCloseModal = () => {
+    authStore.set({ formType: null });
+    email = '';
+    password = '';
+  };
 
   const handleSignUp = async () => {
     try {
@@ -41,7 +46,7 @@
   const handleLogin = async () => {
     try {
       loading = true;
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { user, error } = await supabase.auth.signIn({
         email: email, // use the email variable
         password: password // use the password variable
       });
@@ -67,8 +72,19 @@
 
 <div in:fly={{ x: -600, duration: 800 }} out:fly={{ x: 600, duration: 800 }}>
   <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md">
-      <div class="flex justify-between mb-4">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md relative">
+      <!-- Close button -->
+      <button
+        class="absolute top-2 right-2 z-10 text-gray-600 hover:text-red-500 focus:outline-none"
+        on:click={handleCloseModal}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Tabs -->
+      <div class="flex justify-between mb-4 z-10">
         <button
           class="px-4 py-2 text-blue-500 font-semibold focus:outline-none"
           class:selected={formType === 'register'}
@@ -84,76 +100,75 @@
           Login
         </button>
       </div>
-      {#if formType === 'register'}
-        <!-- Registration form -->
-        <form on:submit|preventDefault={handleSignUp}>
-          <div>
-            <label for="email">Email</label>
-            <input
-              id="email"
-              class="inputField text-black"
-              type="email"
-              placeholder="Your email"
-              bind:value={email}
-            />
-          </div>
-          <div>
-            <label for="password">Password</label>
-            <input
-              id="password"
-              class="inputField text-black"
-              type="password"
-              placeholder="Your password"
-              bind:value={password}
-            />
-          </div>
-          <div>
-            <button
-              type="submit"
-              class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              aria-live="polite"
-              disabled={loading}
-            >
-              <span>{loading ? 'Loading' : 'Register'}</span>
-            </button>
-          </div>
-        </form>
-      {/if}
-      {#if formType === 'login'}
-        <!-- Login form -->
-        <form on:submit|preventDefault={handleLogin}>
-          <div>
-            <label for="email">Email</label>
-            <input
-              id="email"
-              class="inputField text-black"
-              type="email"
-              placeholder="Your email"
-              bind:value={email}
-            />
-          </div>
-          <div>
-            <label for="password">Password</label>
-            <input
-              id="password"
-              class="inputField text-black"
-              type="password"
-              placeholder="Your password"
-              bind:value={password}
-            />
-          </div>
-          <div>
-            <button
-              type="submit"
-              class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              aria-live="polite"
-              disabled={loading}
-            >
-              <span>{loading ? 'Loading' : 'Login'}</span>
-            </button>
-          </div>
-        </form>
-      {/if}
+<!-- Registration form -->
+{#if formType === 'register'}
+  <form on:submit|preventDefault={handleSignUp}>
+    <div>
+      <label for="email">Email</label>
+      <input
+        id="email"
+        class="inputField text-black"
+        type="email"
+        placeholder="Your email"
+        bind:value={email}
+      />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input
+        id="password"
+        class="inputField text-black"
+        type="password"
+        placeholder="Your password"
+        bind:value={password}
+      />
+    </div>
+    <div>
+      <button
+        type="submit"
+        class="mt-4 bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded focus:outline-none"
+        disabled={loading}
+      >
+        <span>{loading ? 'Loading' : 'Register'}</span>
+      </button>
+    </div>
+  </form>
+{/if}
+
+<!-- Login form -->
+{#if formType === 'login'}
+  <form on:submit|preventDefault={handleLogin}>
+    <div>
+      <label for="email">Email</label>
+      <input
+        id="email"
+        class="inputField text-black"
+        type="email"
+        placeholder="Your email"
+        bind:value={email}
+      />
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input
+        id="password"
+        class="inputField text-black"
+        type="password"
+        placeholder="Your password"
+        bind:value={password}
+      />
+    </div>
+    <div>
+      <button
+        type="submit"
+        class="mt-4 bg-green-500 hover:bg-green-800 text-white font-bold py-2 px-4 rounded focus:outline-none"
+        disabled={loading}
+      >
+        <span>{loading ? 'Loading' : 'Login'}</span>
+      </button>
+    </div>
+  </form>
+{/if}
     </div>
   </div>
 </div>
