@@ -177,3 +177,24 @@
     </div>
   </div>
 </div>
+
+<!-- Add the following CSS styles to ensure the submit button is always visible -->
+<style>
+/* Remove any styles that might hide the submit button */
+.submit-btn {
+  visibility: visible;
+}
+
+/* Hide the other modal with tabs */
+.modal-overlay:not(:last-child) {
+  display: none;
+}
+/* Adjust the styles of the submit button to ensure it's always visible */
+.bg-green-500 {
+  background-color: #10b981; /* Change the background color to green */
+}
+
+.bg-green-500:hover {
+  background-color: #10b981; /* Remove the hover effect */
+}
+</style>
