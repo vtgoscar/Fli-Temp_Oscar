@@ -29,11 +29,6 @@
 {#if showModal}
   <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div class="bg-white p-6 rounded-lg shadow-lg max-w-md relative">
-      <button on:click={closeModal} class="absolute top-0 right-0 m-4 text-gray-700 hover:text-black focus:outline-none">
-        <svg class="h-6 w-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M2.293 2.293a1 1 0 011.414 0L10 8.586l6.293-6.293a1 1 0 111.414 1.414L11.414 10l6.293 6.293a1 1 0 01-1.414 1.414L10 11.414l-6.293 6.293a1 1 0 01-1.414-1.414L8.586 10 2.293 3.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
-        </svg>
-      </button>
       <div class="tabs">
         <button class="tab" class:selected={activeTab === 'register'} on:click={() => activeTab = 'register'}>Register</button>
         <button class="tab" class:selected={activeTab === 'login'} on:click={() => activeTab = 'login'}>Login</button>
