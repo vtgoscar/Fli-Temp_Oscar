@@ -109,7 +109,7 @@
         id="email"
         class="inputField text-black"
         type="email"
-        placeholder="Your email"
+        placeholder="Register email"
         bind:value={email}
       />
     </div>
