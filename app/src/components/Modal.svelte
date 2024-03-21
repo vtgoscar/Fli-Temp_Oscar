@@ -28,11 +28,7 @@
 
 {#if showModal}
   <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md relative">
-      <div class="tabs">
-        <button class="tab" class:selected={activeTab === 'register'} on:click={() => activeTab = 'register'}>Register</button>
-        <button class="tab" class:selected={activeTab === 'login'} on:click={() => activeTab = 'login'}>Login</button>
-      </div>
+
       {#if activeTab === 'register'}
         <!-- Render register form -->
         <Auth formType="register" on:close={closeModal} />
@@ -40,8 +36,8 @@
         <!-- Render login form -->
         <Auth formType="login" on:close={closeModal} />
       {/if}
-    </div>
   </div>
+
 {/if}
 
 <style>
