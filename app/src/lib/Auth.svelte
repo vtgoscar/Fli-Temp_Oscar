@@ -2,11 +2,16 @@
   import { supabase } from '../supabaseClient';
   import { fly } from 'svelte/transition';
   import authStore from '../lib/AuthStore';
+  import { onMount } from 'svelte';
 
   let loading = false;
   let email = '';
   let password = '';
-  let formType = ''; // Can be 'register' or 'login'
+  let formType = 'register'; // Set the default formType to 'register'
+
+  onMount(() => {
+    authStore.set({ formType: 'register' });
+  });
 
   authStore.subscribe((state) => {
     formType = state.formType;
