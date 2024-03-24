@@ -7,18 +7,18 @@
   let loading = false;
   let email = '';
   let password = '';
-  let formType = 'register'; // Set the default formType to 'register'
+  let activeTab = 'register'; // Set the default activeTab to 'register'
 
   onMount(() => {
-    authStore.set({ formType: 'register' });
+    authStore.set({ activeTab: 'register' });
   });
 
   authStore.subscribe((state) => {
-    formType = state.formType;
+    activeTab = state.activeTab;
   });
 
   const handleCloseModal = () => {
-    authStore.set({ formType: null });
+    authStore.set({ activeTab: null });
     email = '';
     password = '';
     // Hide the current modal
@@ -73,22 +73,25 @@
     }
   };
 
-  const handleLogin = async () => {
-    try {
-      loading = true;
-      const { user, error } = await supabase.auth.signIn({
-        email: email, // use the email variable
-        password: password // use the password variable
-      });
-      if (error) throw error;
-    } catch (error) {
-      if (error instanceof Error) {
-        alert(error.message);
-      }
-    } finally {
-      loading = false;
-    }
-  };
+const handleLogin = async () => {
+  try {
+    loading = true;
+    const { user, error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password
+    });
+    if (error) throw error;
+    alert('Logged in successfully!');
+    // Handle successful login, e.g., redirect to dashboard
+  } catch (error) {
+    console.error('Error signing in:', error);
+    // Handle sign-in errors, e.g., display error message to the user
+    alert(error.message);
+  } finally {
+    loading = false;
+  }
+}
+
 
   const signOut = async () => {
     try {
@@ -118,22 +121,22 @@
       <div class="flex justify-between mb-4 z-10">
         <button
           class="px-4 py-2 text-blue-500 font-semibold focus:outline-none"
-          class:selected={formType === 'register'}
-          on:click={() => authStore.set({ formType: 'register' })}
+          class:selected={activeTab === 'register'}
+          on:click={() => authStore.set({ activeTab: 'register' })}
         >
           Register
         </button>
         <button
           class="px-4 py-2 text-blue-500 font-semibold focus:outline-none"
-          class:selected={formType === 'login'}
-          on:click={() => authStore.set({ formType: 'login' })}
+          class:selected={activeTab === 'login'}
+          on:click={() => authStore.set({ activeTab: 'login' })}
         >
           Login
         </button>
       </div>
       
       <!-- Registration form -->
-      {#if formType === 'register'}
+      {#if activeTab === 'register'}
         <form on:submit|preventDefault={handleSignUp}>
           <div>
             <label for="register-email">Email</label>
@@ -168,7 +171,7 @@
       {/if}
 
       <!-- Login form -->
-      {#if formType === 'login'}
+      {#if activeTab === 'login'}
         <form on:submit|preventDefault={handleLogin}>
           <div>
             <label for="login-email">Email</label>
