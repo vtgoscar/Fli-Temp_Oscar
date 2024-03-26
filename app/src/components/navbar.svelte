@@ -3,6 +3,7 @@
   import logoDark from '../assets/images/logo-blk-wt.png';
   import logoLight from '../assets/images/logo-wt-blk.png';
   import Modal from './Modal.svelte'; // Import the Modal component
+  
 
   let menu = false;
   let loading = false;
