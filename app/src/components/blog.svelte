@@ -1,26 +1,26 @@
 <script>
-    import blog1 from '../assets/images/blog/01.jpg';
-    import blog2 from '../assets/images/blog/02.jpg';
-    import blog3 from '../assets/images/blog/03.jpg';
+    import blog1 from '../assets/images/blog/stock-exchange.webp';
+    import blog2 from '../assets/images/blog/chocolates.webp';
+    import blog3 from '../assets/images/blog/luxury-hotel-resort.webp';
     import {CalendarIcon,ClockIcon } from 'svelte-feather-icons';
     
     const blogData = [
     {
         image:blog1,
-        title:'Design your apps in your own way',
-        desc:'This is required when, for example, the final text is not yet available.',
-        date:'13th March 2023'
+        title:'Economic Boost',
+        desc:'Major sports tournaments attract a significant number of attendees, including players, celebrities, spectators, and media personnel. ',
+        date:'13th March 2024'
     },
     {
         image:blog2,
-        title:'How apps is changing the IT world',
-        desc:'This is required when, for example, the final text is not yet available.',
-        date:'5th May 2023'
+        title:'Brand Exposure',
+        desc:'Media coverage and promotional activities related to the event can increase the visibility of the venue, attracting more visitors in the long run.',
+        date:'5th September 2023'
     },
     {
         image:blog3,
-        title:'Smartest Applications for Business',
-        desc:'This is required when, for example, the final text is not yet available.',
+        title:'Tourism and Destination Attraction',
+        desc:'A major sports tournament can turn the casino and resort into a destination for sports enthusiasts.',
         date:'19th June 2023'
     },
 ];

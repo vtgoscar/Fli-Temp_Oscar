@@ -1,7 +1,7 @@
 <script>
-	import blog1 from '../assets/images/blog/streaming.webp';
-	import blog2 from '../assets/images/blog/02.jpg';
-	import blog3 from '../assets/images/blog/03.jpg';
+	import obj1 from '../assets/images/objectives/streaming.webp';
+	import obj2 from '../assets/images/objectives/design.webp';
+	import obj3 from '../assets/images/objectives/reward.webp';
 	let activeIndex = 1;
 </script>
 
@@ -46,7 +46,8 @@
 									>Our disc golf courses are renowned for their innovative and captivating designs.
 								</span>
 								<span class="block mt-2"
-									>Our courses offer a diverse range of challenges to test players of all skill levels.</span
+									>Our courses offer a diverse range of challenges to test players of all skill
+									levels.</span
 								>
 							</button>
 						</li>
@@ -75,7 +76,7 @@
 					class="p-6 bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 rounded-md"
 				>
 					<div class={activeIndex === 1 ? '' : 'hidden'}>
-						<img src={blog1} class="shadow dark:shadow-gray-700 rounded-md" alt="" />
+						<img src={obj1} class="shadow dark:shadow-gray-700 rounded-md" alt="" />
 
 						<div class="mt-6">
 							<h5 class="text-lg font-medium">Live Streaming</h5>
@@ -88,14 +89,14 @@
 						</div>
 					</div>
 					<div class={activeIndex === 2 ? '' : 'hidden'}>
-						<img src={blog2} class="shadow dark:shadow-gray-700 rounded-md" alt="" />
+						<img src={obj2} class="shadow dark:shadow-gray-700 rounded-md" alt="" />
 
 						<div class="mt-6">
 							<h5 class="text-lg font-medium">Strategic Design Elements</h5>
 							<p class="text-slate-400 mt-4">
-								We strategically place obstacles, such as trees, bushes, and water hazards, 
-                                to add strategic depth to each hole. Thoughtful placement of these elements 
-                                encourages players to develop creative shot-making skills and strategic decision-making.
+								We strategically place obstacles, such as trees, bushes, and water hazards, to add
+								strategic depth to each hole. Thoughtful placement of these elements encourages
+								players to develop creative shot-making skills and strategic decision-making.
 							</p>
 							<div class="mt-4">
 								<a href="/" class="text-teal-500"
@@ -105,7 +106,7 @@
 						</div>
 					</div>
 					<div class={activeIndex === 3 ? '' : 'hidden'}>
-						<img src={blog3} class="shadow dark:shadow-gray-700 rounded-md" alt="" />
+						<img src={obj3} class="shadow dark:shadow-gray-700 rounded-md" alt="" />
 
 						<div class="mt-6">
 							<h5 class="text-lg font-medium">Results & Reporting</h5>
