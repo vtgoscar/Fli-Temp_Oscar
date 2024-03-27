@@ -39,7 +39,7 @@
                                     <div class="mt-8">
                                         <div class="section-title text-md-start">
                                             <h6 class="text-white/70 text-sm font-semibold uppercase">Get Free Trial</h6>
-                                            <h3 class="font-semibold text-2xl leading-normal text-white mt-2">Get An Easy Start <br/> With Upcover Now</h3>
+                                            <h3 class="font-semibold text-2xl leading-normal text-white mt-2">Get An Easy Start <br/> With FLI Golf Now</h3>
                                         </div>
                                     </div>
 
