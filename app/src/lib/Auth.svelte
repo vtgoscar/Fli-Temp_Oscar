@@ -9,7 +9,7 @@
 	let email = '';
 	let password = '';
 	let activeTab = 'register'; // Set the default activeTab to 'register'
-  export let formType; // Define formType prop
+	export let formType; // Define formType prop
 
 	onMount(() => {
 		authStore.set({ activeTab: 'register' });
@@ -88,7 +88,8 @@
 			});
 			if (error) throw error;
 			alert('Logged in successfully!');
-			// Handle successful login, e.g., redirect to dashboard
+			// Reload the page after successful login
+			window.location.reload();
 		} catch (error) {
 			console.error('Error signing in:', error);
 			// Handle sign-in errors, e.g., display error message to the user
