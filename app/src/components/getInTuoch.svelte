@@ -2,30 +2,32 @@
     import contact from '../assets/images/contact.svg';
     import { supabase } from '../supabaseClient';
 
-    let name = '';
+    let first_name = '';
+    let last_name = '';
     let email = '';
-    let subject = '';
     let comments = '';
     let loading = false;
+    let selectOption = '';
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
             loading = true;
-            const { data, error } = await supabase.from('contact_message').insert([
+            const { data, error } = await supabase.from('inquiries').insert([
                 {
-                    contact_name: name,
-                    contact_email: email,
-                    contact_question: subject,
-                    contact_comment: comments
+                    first_name: first_name,
+                    last_name: last_name,
+                    email: email,
+                    comments: comments,
+                    inquiry_type: selectOption
                 }
             ]);
             if (error) throw error;
             console.log('Message sent successfully:', data);
             // Clear the form after successful submission
-            name = '';
+            first_name = '';
+            last_name = '';
             email = '';
-            subject = '';
             comments = '';
             alert('Message sent successfully!');
         } catch (error) {
@@ -34,6 +36,11 @@
         } finally {
             loading = false;
         }
+    };
+
+    const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
     };
 </script>
 
@@ -58,17 +65,28 @@
                         <form on:submit={handleSubmit}>
                             <div class="grid lg:grid-cols-12 grid-cols-1 gap-3">
                                 <div class="lg:col-span-6">
-                                    <label for="name" class="font-semibold">Your Name:</label>
+                                    <label for="first_name" class="font-semibold">First Name:</label>
                                     <input
-                                        bind:value={name}
-                                        id="name"
+                                        bind:value={first_name}
+                                        id="first_name"
                                         type="text"
                                         class="mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-100 dark:border-gray-800 focus:ring-0"
-                                        placeholder="Name"
+                                        placeholder="First Name"
                                     />
                                 </div>
 
                                 <div class="lg:col-span-6">
+                                    <label for="last_name" class="font-semibold">Last Name:</label>
+                                    <input
+                                        bind:value={last_name}
+                                        id="last_name"
+                                        type="text"
+                                        class="mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-100 dark:border-gray-800 focus:ring-0"
+                                        placeholder="Last Name"
+                                    />
+                                </div>
+
+                                <div class="lg:col-span-12">
                                     <label for="email" class="font-semibold">Your Email:</label>
                                     <input
                                         bind:value={email}
@@ -76,17 +94,31 @@
                                         type="email"
                                         class="mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-100 dark:border-gray-800 focus:ring-0"
                                         placeholder="Email"
+                                        on:input={() => validateEmail(email)}
                                     />
+                                    {#if !validateEmail(email)}
+                                        <p class="text-red-500">Please enter a valid email.</p>
+                                    {/if}
                                 </div>
 
                                 <div class="lg:col-span-12">
-                                    <label for="subject" class="font-semibold">Your Question:</label>
-                                    <input
-                                        bind:value={subject}
-                                        id="subject"
-                                        class="mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-100 dark:border-gray-800 focus:ring-0"
-                                        placeholder="Subject"
-                                    />
+                                    <label for="selectOption" class="font-semibold">Select Option:</label>
+                                    <select
+                                        bind:value={selectOption}
+                                        id="selectOption"
+                                        class="mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900"
+                                        required
+                                    >
+                                        <option value="">Select an Option</option>
+                                        <option value="collaborate">Collaborate with Us</option>
+                                        <option value="partner">Partner with Us</option>
+                                        <option value="marketing">Marketing Opportunities</option>
+                                        <option value="sponsorship">Get Sponsored by Us</option>
+                                        <option value="general">General Inquiry</option>
+                                    </select>
+                                    {#if selectOption === ''}
+                                        <p class="text-red-500">Please select an option.</p>
+                                    {/if}
                                 </div>
 
                                 <div class="lg:col-span-12">
@@ -96,13 +128,13 @@
                                         id="comments"
                                         class="mt-2 w-full py-2 px-3 h-28 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-100 dark:border-gray-800 focus:ring-0"
                                         placeholder="Message"
-                                    ></textarea>
+                                    />
                                 </div>
                             </div>
                             <button
                                 type="submit"
                                 class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500 text-white mt-2"
-                                disabled={loading}
+                                disabled={loading || !validateEmail(email) || selectOption === ''}
                             >
                                 {loading ? 'Sending...' : 'Send Message'}
                             </button>
