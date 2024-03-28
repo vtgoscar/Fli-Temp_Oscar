@@ -2,7 +2,7 @@
     <div class="container relative">
         <div class="grid grid-cols-1 pb-6 text-center">
             <h3 class="font-semibold text-2xl leading-normal mb-4">Our Pricing</h3>
-            <p class="text-slate-400 max-w-xl mx-auto">This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+            <p class="text-slate-400 max-w-xl mx-auto">Paid subscriptions will be avalible soon!</p>
         </div>
 
         <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
@@ -16,24 +16,29 @@
                 </div>
 
                 <ul class="list-none text-slate-400">
-                    <li class="mb-1 flex"><i class="mdi mdi-check-circle-outline text-teal-500 text-[20px] align-middle me-2"></i> <span>We offers a free month of service for new customers.</span></li>
+                    <li class="mb-1 flex"><i class="mdi mdi-check-circle-outline text-teal-500 text-[20px] align-middle me-2"></i> <span>Sign up for free news updates and receive a new member 10% discount on your first purchase. Stay informed with the latest news and updates, plus enjoy an exclusive 10% discount on your initial order as a welcome gift for joining our community.</span></li>
                 </ul>
                 <a href="/" class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500/5 hover:bg-teal-500 text-teal-500 hover:text-white w-full mt-5">Free Demo</a>
             </div>
 
             <div class="group p-6 relative overflow-hidden shadow dark:shadow-gray-700 bg-white dark:bg-slate-900 rounded-md h-fit">
-                <h6 class="font-semibold mb-5 text-xl">Monthly Subscription</h6>
+                <h6 class="font-semibold mb-5 text-xl">Tier 1 Subscriptions</h6>
 
                 <div class="flex mb-5">
                     <span class="text-lg font-medium">$</span>
-                    <span class="price text-5xl h6 font-semibold mb-0">9</span>
+                    <span class="price text-5xl h6 font-semibold mb-0">1.99</span>
                     <span class="text-lg font-medium self-end mb-1">/mo</span>
                 </div>
 
                 <ul class="list-none text-slate-400">
-                    <li class="mb-1 flex"><i class="mdi mdi-check-circle-outline text-teal-500 text-[20px] align-middle me-2"></i> <span>Offers coming soon</span></li>
-                    <li class="mb-1 flex"><i class="mdi mdi-check-circle-outline text-teal-500 text-[20px] align-middle me-2"></i> <span>Advanced</span></li>
+                    <li class="mb-1 flex"><i class="mdi mdi-check-circle-outline text-teal-500 text-[20px] align-middle me-2"></i> <span>One time payment</span></li>
                 </ul>
+
+                <div class="flex mb-5">
+                    <span class="text-lg font-medium">$</span>
+                    <span class="price text-5xl h6 font-semibold mb-0">19.99</span>
+                    <span class="text-lg font-medium self-end mb-1">/yr</span>
+                </div>
                 <a href="/" class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500/5 hover:bg-teal-500 text-teal-500 hover:text-white w-full mt-5">Subscribe Now</a>
             </div>
 
