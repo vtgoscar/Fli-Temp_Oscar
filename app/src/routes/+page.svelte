@@ -11,9 +11,19 @@
 	import GetInTouch from '../components/getInTuoch.svelte';
 	import Footer from '../components/footer.svelte';
 	import Switcher from '../components/switcher.svelte';
+	import Modal from '../components/Modal.svelte';
+
+	let loading = false;
+	let modalTypeToShow = null;
+
+	function openModal(modalType) {
+		console.log('Opening modal:', modalType);
+		modalTypeToShow = modalType;
+	}
 </script>
 
 <Header />
+
 <section
 	class="relative overflow-hidden md:py-48 py-40 bg-teal-500/5 dark:bg-teal-500/20"
 	id="home"
@@ -26,7 +36,7 @@
 				>
 					"Where Disc Golf Takes Flight"
 				</h1>
-				<p class="text-slate-500 text-lg max-w-xl">
+				<p class="text-slate-500 text-lg max-w-xl font-semibold">
 					FLI Golf is a gender equal brand supporting gender equality and women's empowerment. Our
 					brand is dedicated to uplifting women in sports, particularly within the dynamic world of
 					disc golf. Expect nothing but the best from us. Exclusive limited edition clothing and
@@ -41,11 +51,14 @@
 					changing it for the better.
 				</p>
 				<div class="mt-6">
-					<a
-						href="#contact"
+					<!-- Button triggering the modal -->
+					<button
+						type="button"
 						class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500 text-white"
-						>Contact Us <i class="mdi mdi-chevron-right ms-1" /></a
+						on:click={() => openModal('register')}
 					>
+						Register
+					</button>
 				</div>
 			</div>
 
@@ -63,7 +76,6 @@
 
 <About />
 <Services />
-<AgencyTab />
 <Cta />
 <Client />
 <Pricing />
@@ -71,3 +83,5 @@
 <GetInTouch />
 <Footer />
 <Switcher />
+
+<Modal {modalTypeToShow} />

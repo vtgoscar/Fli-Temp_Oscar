@@ -97,6 +97,4 @@
 			Sign Out
 		</button>
 	</form>
-{:else}
-	<div>You are not logged in.</div>
-{/if}
+{:else}{/if}
