@@ -23,6 +23,17 @@
 		showModal = false;
 		activeTab = 'register'; // Reset active tab when closing the modal
 		modalTypeToShow = null; // Reset modalTypeToShow prop
+
+		// Remove the overlay and modal elements
+		const overlay = document.querySelector('.modal-overlay');
+		const modal = document.querySelector('.modal');
+
+		if (overlay) overlay.remove();
+		if (modal) modal.remove();
+
+		// Refresh the page
+		location.reload(); // Refresh the page
+		console.log('refresh');
 	}
 </script>
 
