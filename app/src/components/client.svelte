@@ -21,7 +21,7 @@
 			image: client2,
 			name: 'Dustin Dinsmore',
 			title: 'CTO / Co-Founder',
-			desc: '" As someone deeply ingrained in the world of sports and leveraging my background in technology, I am committed to promoting gender equality in sports. Together, let us harness the power of innovation and inclusivity to create a level playing field for all athletes." "'
+			desc: '" As someone deeply ingrained in the world of sports and leveraging my background in technology, I am committed to promoting gender equality in sports. Together, let us harness the power of innovation and inclusivity to create a level playing field for all athletes."'
 		},
 		{
 			image: client3,
@@ -39,7 +39,7 @@
 			image: client5,
 			name: 'Corey La Russo',
 			title: 'Chief Marketing Officer',
-			desc: '" There is now an abundance of readable dummy texts. These are usually used when a text is required"'
+			desc: '"Throughout my journey as a professional golfer, I have dedicated myself to mastering the game and collaborating with prestigious organizations like IHeart Radio, the Natinal Baskeball Association and multiple golf orginizations. Managing NBA players has provided unique insights into the world of athletics. Competing on the international stage of international professional golf tours has not only showcased my skills but also allowed me to advocate for gender equality in sports. I am proud to break barriers and inspire future generations to pursue their passions, regardless of gender."'
 		},
 		{
 			image: client6,
@@ -79,7 +79,6 @@
 </script>
 
 <section class="relative md:py-24 py-16" id="review">
-	5t5
 	<div class="container relative">
 		<div class="grid grid-cols-1 pb-6 text-center">
 			<h3 class="font-semibold text-2xl leading-normal mb-4">Managment Testimonials</h3>

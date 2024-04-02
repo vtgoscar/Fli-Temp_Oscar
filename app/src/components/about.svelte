@@ -30,12 +30,6 @@
 						serves as our platform for progress, a catalyst for change, and a vibrant community
 						united by passion.
 					</p>
-
-					<a
-						href="/"
-						class="h-10 px-6 tracking-wide inline-flex items-center justify-center font-medium rounded-md bg-teal-500 text-white"
-						>Read More <i class="mdi mdi-chevron-right align-middle ms-0.5" /></a
-					>
 				</div>
 			</div>
 		</div>

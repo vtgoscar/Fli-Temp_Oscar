@@ -42,13 +42,13 @@
 					disc golf. Expect nothing but the best from us. Exclusive limited edition clothing and
 					apparel drops throughout the year. Player & Brand collaborations. Disc Brand
 					collaborations. Always a portion of our proceeds goes towards organizations focusing on
-					gender equality and youth sports. We're all about collaboration, whether it's partnering
-					with players and brands who share our values or teaming up with top disc manufacturers to
-					provide you with the finest equipment for your game. What's more, when you support FLI
-					Golf, you're also supporting a greater cause – a portion of our proceeds is directed
-					towards organizations championing gender equality in sports and fostering youth athletic
-					programs. Join us today to be part of a community that's not just playing the game, but
-					changing it for the better.
+					gender equality and youth sports. <br /><br />We're all about collaboration, whether it's
+					partnering with players and brands who share our values or teaming up with top disc
+					manufacturers to provide you with the finest equipment for your game. What's more, when
+					you support FLI Golf, you're also supporting a greater cause – a portion of our proceeds
+					is directed towards organizations championing gender equality in sports and fostering
+					youth athletic programs. Join us today to be part of a community that's not just playing
+					the game, but changing it for the better.
 				</p>
 				<div class="mt-6">
 					<!-- Button triggering the modal -->
@@ -79,7 +79,6 @@
 <Cta />
 <Client />
 <Pricing />
-<Blogs />
 <GetInTouch />
 <Footer />
 <Switcher />

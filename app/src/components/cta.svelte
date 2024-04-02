@@ -37,28 +37,7 @@
 				<div class="content md:mt-8">
 					<div class="grid lg:grid-cols-12 grid-cols-1 md:text-start text-center justify-center">
 						<div class="lg:col-start-2 lg:col-span-10">
-							<div class="grid md:grid-cols-2 grid-cols-1 items-center">
-								<div class="mt-8">
-									<div class="section-title text-md-start">
-										<h6 class="text-white/70 text-sm font-semibold uppercase">Get Free Trial</h6>
-										<h3 class="font-semibold text-2xl leading-normal text-white mt-2">
-											Get An Easy Start <br /> With FLI Golf Now
-										</h3>
-									</div>
-								</div>
-
-								<div class="mt-8">
-									<div class="section-title text-md-start">
-										<p class="text-white/70 max-w-xl mx-auto mb-2">
-											This is just a simple text made for this unique and awesome template, you can
-											replace it with any text.
-										</p>
-										<a href="/" class="text-white"
-											>Read More <i class="mdi mdi-chevron-right align-middle" /></a
-										>
-									</div>
-								</div>
-							</div>
+							<div class="grid md:grid-cols-2 grid-cols-1 items-center" />
 						</div>
 					</div>
 				</div>
