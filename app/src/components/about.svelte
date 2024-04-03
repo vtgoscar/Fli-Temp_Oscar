@@ -21,7 +21,7 @@
 			<div class="md:col-span-6">
 				<div class="lg:ms-8">
 					<h3 class="font-semibold text-2xl leading-normal mb-4">
-						Our Mission: <br /> Redefine disc golf
+						Our Mission: <br /> Redefine Disc Golf
 					</h3>
 
 					<p class="text-slate-500 max-w-xl mb-6 font-semibold">

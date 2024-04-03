@@ -41,9 +41,9 @@
 		},
 		{
 			icon: HexagonIcon,
-			title: 'Competition',
-			desc: 'Simply put, FLI Golf tournaments will be unmatched with anything happening in the sport of disc golf today.',
-			body: 'Competition fuels progress and pushes boundaries. Our tournaments provide a platform for players to showcase their skills, pushing the sport of disc golf to new heights.',
+			title: 'FAQ',
+			desc: 'Is disc golf popular enough as a sport to sustain a tournament of this magnitude? A) There are over 51.6 MILLION registered rounds of disc golf played each year worldwide. (As per sportspromedia.com and udisc.com)',
+			body: 'How accessible is Disc Golf to the average American? A) 500 MILLION people live within 6 miles of a disc golf course.',
 			link: 'competition'
 		},
 		{
