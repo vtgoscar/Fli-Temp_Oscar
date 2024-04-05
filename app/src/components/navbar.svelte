@@ -173,17 +173,6 @@
 				</li>
 				<li class="nav-item ms-0">
 					<a
-						class="nav-link blog"
-						href="#blog"
-						on:click={handleAnchorClick}
-						smooth={true}
-						duration={1000}
-						activeClass="active"
-						spy={true}>Blogs</a
-					>
-				</li>
-				<li class="nav-item ms-0">
-					<a
 						class="nav-link contact"
 						href="#contact"
 						on:click={handleAnchorClick}
