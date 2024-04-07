@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
-
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="%sveltekit.assets%/FAV_NEW.png" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	%sveltekit.head%
-</head>
-
-<body data-sveltekit-preload-data="hover" data-theme="crimson">
-	<div style="display: contents" class="h-full overflow-hidden">%sveltekit.body%</div>
-</body>
-
+<!doctype html>
+<html lang="en" class="light scroll-smooth" dir="ltr">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta
+		name="description"
+		content="Svelte Landing Page Template"
+		/>
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+	<title>FLI Golf - Where Disc Golf Takes Flight</title>
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover" class="font-libre_franklin text-base text-black dark:text-white bg-white dark:bg-slate-900">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
 </html>

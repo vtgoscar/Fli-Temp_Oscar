@@ -1,33 +1,37 @@
 <script lang="ts">
-	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
-	import Footer from '$lib/components/Footer.svelte';
-	import NavBar from '$lib/components/NavBar.svelte';
-	import SubscribePopUp from '$lib/components/SubscribePopUp.svelte';
-	import { overlayStore } from '$lib/overlayStore';
-	import authStore from '$lib/AuthStore';
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
+	import '../app.css';
+	import '../assets/css/tailwind.css';
+	import '../assets/css/materialdesignicons.min.css';
+	import { supabase } from '/src/supabaseClient.ts';
 	import type { AuthSession } from '@supabase/supabase-js';
-	import { supabase } from '/src/suprabaseClient.ts';
-	import { page } from '$app/stores';
-	import AdminDashboard from '$lib/AdminDashboard.svelte';
-	import ParticipantDashboard from '$lib/ParticipantDashboard.svelte';
-	import SubscribertDashboard from '$lib/SubscriberDashboard.svelte';
+	import Account from '/workspace/Fli-Temp/app/src/lib/Account.svelte';
 	import { goto } from '$app/navigation';
-	import Icon from '@iconify/svelte';
-	import { tick } from 'svelte';
-	import UpdatePasswordForm from '$lib/components/updatePasswordForm.svelte';
-	import { fly } from 'svelte/transition';
-	import { initializeStores } from '@skeletonlabs/skeleton';
+  import { page } from '$app/stores';
 
-	// Initialize any stores or global settings
-	initializeStores();
+
+	onMount(async () => {
+		window.addEventListener('scroll', windowScroll);
+	});
+	/**
+	 * Window scroll
+	 */
+	function windowScroll() {
+		const navbar = document.getElementById('navbar');
+		if (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) {
+			// @ts-ignore
+			navbar.classList.add('is-sticky');
+		} else {
+			// @ts-ignore
+			navbar.classList.remove('is-sticky');
+		}
+	}
 
 	let url: { pathname: string };
 	let showNavBar = false;
 	let isHomePage = false;
 
-	let session: AuthSession | null = null;
+	let session: any = null;
 	let role:
 		| 'Admin'
 		| 'Participant'
@@ -103,6 +107,7 @@
 		showNavBar = !showNavBar;
 	}
 
+	// Add an async function to fetch the user's profile
 	async function fetchUserProfile(userId: string) {
 		const { data, error } = await supabase.from('profiles').select('*').eq('id', userId).single();
 
@@ -114,19 +119,15 @@
 		return data;
 	}
 
+	// Subscribe to auth state changes
 	supabase.auth.onAuthStateChange(async (event, newSession) => {
 		session = newSession;
 		console.log('Session updated:', session);
 
 		if (session) {
-			// Update the user's role and signed status
+			// Fetch the user's profile when the session is updated
 			const userProfile = await fetchUserProfile(session.user.id);
-			role = userProfile?.role || null;
-			hasSigned = userProfile?.has_signed || false;
-
-			// Use a function to determine redirection based on role
-			// This function should consider the current route to avoid unnecessary redirects
-			handleRoleBasedRedirect(role, hasSigned);
+			// Use the user's profile data as needed
 		}
 	});
 
@@ -171,16 +172,10 @@
 
 	let isLoggedIn = false;
 	let formType;
-	authStore.subscribe((state) => {
-		formType = state.formType;
-	});
+
 
 	async function setFormToRegister() {
 		await tick(); // Wait for the DOM to update
-		authStore.update((state) => {
-			state.formType = 'register';
-			return state;
-		});
 	}
 
 	const signOut = async () => {
@@ -195,12 +190,6 @@
 		}
 	};
 
-	function setFormToLogin() {
-		authStore.update((state) => {
-			state.formType = 'login';
-			return state;
-		});
-	}
 
 	async function handlePasswordResetRequest() {
 		if (session && session.user?.email) {
@@ -236,13 +225,6 @@
 		}
 	}
 
-	function toggleOverlayForm(formType: 'subscribe' | 'register') {
-		if ($overlayStore.visible && $overlayStore.formType === formType) {
-			overlayStore.set({ visible: false, formType: null });
-		} else {
-			overlayStore.set({ visible: true, formType: formType });
-		}
-	}
 
 	function toggleRegister() {
 		const currentRoute = window.location.pathname;
@@ -289,93 +271,5 @@
 	}
 </script>
 
-<AppShell>
-	<svelte:fragment slot="header">
-		<AppBar>
-			<svelte:fragment slot="lead">
-				<a href="/">
-					<img src="/FLI_BLK.png" alt="FLI GOLF Logo" class="logo-class" />
-				</a>
-			</svelte:fragment>
-		</AppBar>
-		<!-- Place the NavBar logic directly here, outside of a fragment -->
-		{#if isHomePage}
-			<!-- Full NavBar for Home Page -->
-			<NavBar />
-			{#if !session}
-				<!-- Your existing code for larger screens -->
-			{/if}
-		{:else if isSmallScreen}
-			<!-- Mini Menu (Icon) for small screens not on Home Page -->
-			<button class="icon-button" on:click={toggleNavBar}>
-				<div class="ml-8"><Icon icon="mdi:menu" /></div>
-			</button>
-			{#if showNavBar}
-				<NavBar />
-			{/if}
-		{:else}
-			<!-- Full NavBar for large screens not on Home Page -->
-			<NavBar />
-			{#if !session}
-				<!-- Your existing code for larger screens -->
-			{/if}
-		{/if}
-	</svelte:fragment>
-
-	<div class="mt-2 mr-16 ml-16">
-		{#if !session}
-			<!-- User is not logged in -->
-			<div class="flex justify-center items-center py-3">
-				<button class="btn btn-lg variant-ghost-surface p-2 flex-1 mr-1" on:click={toggleRegister}>
-					Register
-				</button>
-				<button class="btn btn-lg variant-ghost-surface p-2 flex-1 ml-1" on:click={setFormToLogin}>
-					Sign In
-				</button>
-			</div>
-		{:else}
-			<!-- User is logged in -->
-			<button class="btn btn-lg variant-ghost-surface p-2 flex-1 ml-1" on:click={signOut}>
-				Sign Out
-			</button>
-			<button
-				class="btn btn-lg variant-ghost-surface p-2 flex-1 mr-1"
-				on:click={handlePasswordResetRequest}
-			>
-				Reset Password
-			</button>
-			<button
-				class="btn btn-lg variant-ghost-surface p-2 flex-1 ml-1"
-				on:click={toggleSubscribePopUp}
-			>
-				Subscribe
-			</button>
-		{/if}
-		{#if showUpdatePasswordForm}
-			<div in:fly={{ x: 300, duration: 300 }} out:fly={{ x: 300, duration: 300 }}>
-				<UpdatePasswordForm on:updatepassword={handleUpdatePasswordEvent} />
-			</div>
-		{:else if $overlayStore.visible}
-			<div class="overlay">
-				<SubscribePopUp />
-			</div>
-		{/if}
-
-		<slot />
-	</div>
-	<Footer />
-</AppShell>
-
-<style>
-	.cursor-pointer {
-		cursor: pointer;
-	}
-
-	.padded-button {
-		padding: 8px;
-	}
-	.overlay {
-		z-index: 1000; /* or any sufficiently high value */
-		position: relative; /* or absolute, depending on your needs */
-	}
-</style>
+<Account />
+<slot />

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import type { AuthSession } from '@supabase/supabase-js';
-	import { supabase } from '/src/suprabaseClient.ts';
+	import { supabase } from '../supabaseClient';
 	import Avatar from './Avatar.svelte';
 
 	export let session: AuthSession;
@@ -13,7 +13,9 @@
 	let user = null; // Set the user to null initially
 
 	onMount(() => {
-		getProfile();
+		if (session && session.user) {
+			getProfile();
+		}
 	});
 
 	const getProfile = async () => {
@@ -73,23 +75,26 @@
 	};
 </script>
 
-<form on:submit|preventDefault={updateProfile} class="form-widget">
-	<Avatar bind:url={avatarUrl} size={150} on:upload={updateProfile} />
-	<div>Email: {session.user.email}</div>
-	<div>
-		<label for="username">Name</label>
-		<input id="username" type="text" class="text-black" bind:value={username} />
-	</div>
-	<div>
-		<label for="website">Website</label>
-		<input id="website" type="text" class="text-black" bind:value={website} />
-	</div>
-	<div>
-		<button type="submit" class="button primary block" disabled={loading}>
-			{loading ? 'Saving ...' : 'Update profile'}
+{#if session && session.user}
+	<form on:submit|preventDefault={updateProfile} class="form-widget">
+		<Avatar bind:url={avatarUrl} size={150} on:upload={updateProfile} />
+		<div>Email: {session.user ? session.user.email : 'Email not available'}</div>
+		<!-- Check if session.user is defined -->
+		<div>
+			<label for="username">Name</label>
+			<input id="username" type="text" class="text-black" bind:value={username} />
+		</div>
+		<div>
+			<label for="website">Website</label>
+			<input id="website" type="text" class="text-black" bind:value={website} />
+		</div>
+		<div>
+			<button type="submit" class="button primary block" disabled={loading}>
+				{loading ? 'Saving ...' : 'Update profile'}
+			</button>
+		</div>
+		<button type="button" class="button block" on:click={() => supabase.auth.signOut()}>
+			Sign Out
 		</button>
-	</div>
-	<button type="button" class="button block" on:click={() => supabase.auth.signOut()}>
-		Sign Out
-	</button>
-</form>
+	</form>
+{:else}{/if}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import { supabase } from '/src/suprabaseClient.ts';
+	import { supabase } from '../supabaseClient';
 
 	export let size: number;
 	export let url: string;
